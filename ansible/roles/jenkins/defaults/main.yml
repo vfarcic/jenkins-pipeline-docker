@@ -1,0 +1,12 @@
+home: /data/jenkins
+
+configs: [
+  { src: "credentials.xml", dir: "/data/jenkins", file: "credentials.xml", mode: "0777" },
+  { src: "cd-config.xml", dir: "/data/jenkins/nodes/cd", file: "config.xml", mode: "0777" },
+]
+
+plugins:
+  - git
+  - workflow-aggregator
+  - workflow-multibranch
+  - docker-workflow
