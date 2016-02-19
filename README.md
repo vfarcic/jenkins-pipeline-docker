@@ -7,7 +7,7 @@ Since I prefer hands-on learning, we'll combine *Jenkins Pipeline* with *Docker*
 We'll start by cloning the code and creating virtual machines
 
 ```bash
-git clone https://github.com/vfarcic/jenkins-pipeline.git
+git clone https://github.com/vfarcic/jenkins-pipeline-docker.git
 
 vagrant up cd
 ```
@@ -41,6 +41,12 @@ The Git Step
 ============
 
 The *git* step performs a clone from the specified repository. We'll use it to get the latest code from the repository cloudbees/training-books-ms. Please note that the git step is intelligent enough to know whether the code should be cloned or pulled from the repository.
+
+```ruby
+node("build") {
+    git "https://github.com/vfarcic/jenkins-pipeline-docker.git"
+}
+```
 
 
 
